@@ -22,9 +22,8 @@ for frame in camera.capture_continuous(raw,format="bgr",use_video_port=True):
         print len(faces)
         if len(faces)>0:
             #call(['espeak','hi,there. My name is Mr yellow'])
-            call(['aplay','/usr/share/sounds/alsa/Front_Center.wav'])
+            call(['aplay','/home/pi/mrYellow/soundFiles/1.wav'])
             time.sleep(0.5)
-            #call(['espeak','nice to meet you'])
-            call(['aplay','/usr/share/sounds/alsa/Noise.wav'])
+            call(['espeak','nice to meet you'])
             time.sleep(5)
         raw.truncate(0)
