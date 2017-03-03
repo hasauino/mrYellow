@@ -13,7 +13,7 @@ while True:
 	
 	# Capture frame-by-frame
 	ret, img = cap.read()
-
+        img=cv2.resize(img,None,fx=0.5,fy=0.5,interpolation=cv2.INTER_CUBIC)
 
 	#img = cv2.imread('Obama.jpg')
 	gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
@@ -27,5 +27,5 @@ while True:
 		#roi_color = img[y:y+h, x:x+w]
 	
 	cv2.imshow('im',img)
-	cv2.waitKey(1)
+	cv2.waitKey(25)
 	#cv2.destroyAllWindows()
