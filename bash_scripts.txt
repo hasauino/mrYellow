@@ -1,0 +1,1 @@
+feh -F -Z -z -Y -D1 /home/pi/mrYellow/pics/
