@@ -32,7 +32,7 @@ def face_detection(q):
             cv2.waitKey(25)
             if num_faces>0:
                     t0=time()
-                    call(['aplay','/home/pi/mrYellow/soundFiles/1.wav'])
+                    call(['aplay','/home/pi/mrYellow/soundFiles/ar_marhaban.wav'])
                     while ((time()-t0)<5):
                             detectFaces(cap,cv2,face_cascade)
 #                            print 'waiting'
