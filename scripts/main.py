@@ -6,6 +6,7 @@ from subprocess import call
 import serial
 from copy import copy
 
+
 def detectFaces(cap,cv2,face_cascade):
         ret,img=cap.read()
         img=cv2.resize(img,None,fx=0.5,fy=0.5,interpolation=cv2.INTER_CUBIC)
@@ -14,7 +15,7 @@ def detectFaces(cap,cv2,face_cascade):
         return [faces,img]
 
 def face_detection(q):
-    face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
+    face_cascade = cv2.CascadeClassifier('/home/pi/mrYellow/scripts/haarcascade_frontalface_default.xml')
     cap=cv2.VideoCapture(0)
     sleep(1.0)
 
@@ -53,19 +54,19 @@ def arduino_bluetooth(q):
                         a=ser.read(1)
                         buttons.append(copy(a))
                 del buttons[-1]
-        if not q.empty():
-            if q.get()>0:
-                face=1
-            else:
-                face=0
-        if face==1:
-            buttons.append('f')
+            if not q.empty():
+                if q.get()>0:
+                    face=1
+                else:
+                    face=0
+            if face==1:
+                buttons.append('f')
+            print list(set(buttons))
+            ser_arduino.write(chr(123))
+            ser_arduino.write(chr(55))
+            for b in buttons:
+                    ser_arduino.write(b)
         
-        print list(set(buttons))
-        ser_arduino.write(chr(123))
-        ser_arduino.write(chr(55))
-        for b in buttons:
-                ser_arduino.write(b)
 
 
 
