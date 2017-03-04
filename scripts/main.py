@@ -24,13 +24,6 @@ def face_detection(q):
             if q.full():
                 q.get()
             q.put(num_faces)
-                
-            faces = retfunc[0]
-            img=retfunc[1]
-            for (x,y,w,h) in faces:
-                    cv2.rectangle(img,(x,y),(x+w,y+h),(255,0,0),2)
-            cv2.imshow('im',img)
-            cv2.waitKey(25)
             if num_faces>0:
                     t0=time()
                     call(['aplay','/home/pi/mrYellow/soundFiles/ar_marhaban.wav'])
@@ -42,8 +35,6 @@ def face_detection(q):
 
 
 def arduino_bluetooth(q):
-#if not q.empty():
-#q.get()
     ser=serial.Serial("/dev/ttyS0")
     ser.baudrate=9600
 
