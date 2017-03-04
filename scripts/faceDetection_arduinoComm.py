@@ -28,8 +28,8 @@ def face_detection(q):
                     #roi_gray = gray[y:y+h, x:x+w]
                     #roi_color = img[y:y+h, x:x+w]
             
-            cv2.imshow('im',img)
-            cv2.waitKey(25)
+            #cv2.imshow('im',img)
+            #cv2.waitKey(25)
             if num_faces>0:
                     t0=time()
                     call(['aplay','/home/pi/mrYellow/soundFiles/ar_marhaban.wav'])
