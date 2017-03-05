@@ -64,8 +64,10 @@ def arduino_bluetooth(q):
             print list(set(buttons))
             ser_arduino.write(chr(123))
             ser_arduino.write(chr(55))
+            ser_arduino.write(chr(len(set(buttons))))
             for b in buttons:
                     ser_arduino.write(b)
+            ser_arduino.write(chr(123))
         
 
 
