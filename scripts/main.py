@@ -36,12 +36,10 @@ def face_detection(q):
 
 
 def arduino_bluetooth(q):
-    ser=serial.Serial("/dev/ttyS0")
-    ser.baudrate=9600
-
-    ser_arduino=serial.Serial("/dev/ttyACM0")
-    ser_arduino.baudrate=115200
-    
+    ser=serial.Serial("/dev/ttyS0",9600)
+    sleep(1)
+    ser_arduino=serial.Serial("/dev/ttyACM0",115200)
+    sleep(1)  
     buttons=['0']
     face=0
     while True:

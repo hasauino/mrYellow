@@ -18,21 +18,22 @@ boolean buttons[]={0,            0,              0,       0,              0,    
 void setup()
 {
 Serial.begin(115200);
-Serial3.begin(115200);
-setModes();
+//setModes();
+pinMode(7,OUTPUT);
 
 }
 
 void loop()
 {
 
+
 check_buttons(buttons);
 //Serial3.print(buttons[0]); delay(100);
-if(buttons[fwd_button] && !buttons[left_button] && !buttons[right_button]){fwd(20);} 
-if(buttons[bwd_button] && !buttons[left_button] && !buttons[right_button]){bwd(20);} 
-if(buttons[left_button]){left(20);}
-if(buttons[right_button]){right(20);}
-if (!buttons[0] && !buttons[1] && !buttons[2] && !buttons[3]){stop();}
+if(buttons[fwd_button] && !buttons[left_button] && !buttons[right_button]){digitalWrite(7,HIGH);} 
+if(buttons[bwd_button] && !buttons[left_button] && !buttons[right_button]){ digitalWrite(7,LOW);} 
+//if(buttons[left_button]){left(20);}
+//if(buttons[right_button]){right(20);}
+//if (!buttons[0] && !buttons[1] && !buttons[2] && !buttons[3]){stop();}
 
 }
 
