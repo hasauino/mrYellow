@@ -40,7 +40,7 @@ def arduino_bluetooth(q):
     ser.baudrate=9600
 
     ser_arduino=serial.Serial("/dev/ttyACM0")
-    ser_arduino.baudrate=9600
+    ser_arduino.baudrate=115200
     
     buttons=['0']
     face=0
@@ -65,9 +65,11 @@ def arduino_bluetooth(q):
             ser_arduino.write(chr(123))
             ser_arduino.write(chr(55))
             ser_arduino.write(chr(len(set(buttons))))
-            for b in buttons:
+            for b in set(buttons):
                     ser_arduino.write(b)
-            ser_arduino.write(chr(123))
+
+
+
         
 
 
