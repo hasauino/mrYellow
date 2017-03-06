@@ -7,7 +7,6 @@
 #define M2_MODE 0x47
 #define M2_POWER 0x46
 #define MODE 0x00//0x10
-#define POWER 7 
 #define NONE 48
 #define FWD 55
 #define BWD 57
@@ -93,6 +92,7 @@ motor2(0);
 
 
 void check_buttons(boolean * buttons){
+	
 if(Serial.read()==123){
 while(Serial.available()<1);
 if(Serial.read()==55){
