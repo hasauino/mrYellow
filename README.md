@@ -9,8 +9,16 @@ A diagram for the robot is shown below:
 
 
 ### Connections
+1. Right arm motor 1
 
-What things you need to install the software and how to install them
+| wire          | functionality | pin # |
+| ------------- |---------------| ------|
+| black         |  power +      |  A01  |
+| white         |  power -      |  A02  |
+| red           |  Encoder GND  |  GND  |
+| Green         |  Encoder 4.5V |  5v   |
+| Yellow        |  Encoder 1    |  20   |
+| Blue          |  Encoder 2    |  21   |
 
 ```
 Give examples
