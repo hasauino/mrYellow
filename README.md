@@ -9,7 +9,7 @@ A diagram for the robot is shown below:
 
 
 ### Connections
-1. Right arm motor 1
+1. Right arm motor 2
 
 | wire          | functionality | pin # |
 | ------------- |---------------| ------|
