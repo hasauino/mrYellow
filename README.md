@@ -19,8 +19,8 @@ A diagram for the robot is shown below:
 | Green         |  Encoder 4.5V |  5v  (Arduino)|
 | Yellow        |  Encoder 1    |  19  (Arduino, interrupt) |
 | Blue          |  Encoder 2    |  22  (Arduino) |
-| AIN1 (1st motor driver TB6612FNG)              |  motor black wire input   |  22  (Arduino) |
-| AIN2 (1st motor driver TB6612FNG)              |  motor white wire input   |  23  (Arduino) |
+| AIN1 (1st motor driver TB6612FNG)              |  motor black wire input   |  26  (Arduino) |
+| AIN2 (1st motor driver TB6612FNG)              |  motor white wire input   |  28  (Arduino) |
 | PWMA (1st motor driver TB6612FNG)              |  motor PWM   |  24  (Arduino) |
 
 
