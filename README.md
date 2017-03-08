@@ -13,12 +13,17 @@ A diagram for the robot is shown below:
 
 | wire          | functionality | pin # |
 | ------------- |---------------| ------|
-| black         |  power +      |  A01  |
-| white         |  power -      |  A02  |
-| red           |  Encoder GND  |  GND  |
-| Green         |  Encoder 4.5V |  5v   |
-| Yellow        |  Encoder 1    |  20   |
-| Blue          |  Encoder 2    |  21   |
+| black         |  power +      |  A01 (1st motor driver TB6612FNG) |
+| white         |  power -      |  A02 (1st motor driver TB6612FNG)  |
+| red           |  Encoder GND  |  GND (Arduino) |
+| Green         |  Encoder 4.5V |  5v  (Arduino)|
+| Yellow        |  Encoder 1    |  20  (Arduino) |
+| Blue          |  Encoder 2    |  21  (Arduino) |
+| AIN1 (1st motor driver TB6612FNG)              |  motor black wire input   |  22  (Arduino) |
+| AIN2 (1st motor driver TB6612FNG)              |  motor white wire input   |  23  (Arduino) |
+| PWMA (1st motor driver TB6612FNG)              |  motor PWM   |  24  (Arduino) |
+
+
 
 ```
 Give examples
