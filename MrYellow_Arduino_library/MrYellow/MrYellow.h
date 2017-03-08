@@ -20,14 +20,23 @@
 #define HEAD_CCW 50
 #define FACE 102
 
+//right arm constants
 #define RIGHT_MOTOR2_BLACK 26
 #define RIGHT_MOTOR2_WHITE 28
 #define RIGHT_MOTOR2_PWM 13
 #define RIGHT_MOTOR2_YELLOW 19
 #define RIGHT_MOTOR2_BLUE 22
+#define RIGHT_MOTOR1_BLACK 32
+#define RIGHT_MOTOR1_WHITE 34
+#define RIGHT_MOTOR1_PWM 12
+#define RIGHT_MOTOR1_YELLOW 18
+#define RIGHT_MOTOR1_BLUE 30
+#define RIGHT_MOTOR1_MAX 1300
 
-//right motor is motor 1
-//left motor is motor 2
+
+
+//right motor is motor 1 (base motors)
+//left motor is motor 2 (base motors) 
 
 
 void setModes(){
@@ -173,4 +182,37 @@ analogWrite(RIGHT_MOTOR2_PWM,0);
 enc.write(0);
 }
 
+
+void right_up_1(int power,Encoder & enc){
+analogWrite(RIGHT_MOTOR1_PWM,power);
+digitalWrite(RIGHT_MOTOR1_BLACK,HIGH);
+digitalWrite(RIGHT_MOTOR1_WHITE,LOW);
+boolean cond=true;
+int prev=enc.read();
+
+long t0=millis();
+    while((enc.read())<RIGHT_MOTOR1_MAX && cond){  
+    if ((millis()-t0)>100){
+    if ((enc.read()-prev)>10 ){  cond=true; prev=enc.read(); t0=millis(); }
+    else{cond = false; enc.write(RIGHT_MOTOR1_MAX+500);}   }
+    }  
+analogWrite(RIGHT_MOTOR1_PWM,0);
+}
+
+
+void right_down_1(int power,Encoder & enc){
+analogWrite(RIGHT_MOTOR1_PWM,power);
+digitalWrite(RIGHT_MOTOR1_BLACK,LOW);
+digitalWrite(RIGHT_MOTOR1_WHITE,HIGH);
+boolean cond=true;
+int prev=enc.read();
+
+long t0=millis();
+    while((enc.read())>0 && cond){  
+    if ((millis()-t0)>100){
+    if (abs(enc.read()-prev)>10 ){  cond=true; prev=enc.read(); t0=millis(); }
+    else{cond = false; enc.write(-1500);}   }
+    }  
+analogWrite(RIGHT_MOTOR1_PWM,0);
+}
 
