@@ -4,7 +4,7 @@ A repository containing everything related to mrYellow robot.
 ## Hardware
 A diagram for the robot is shown below:
 
-![Alt text](diagram.png?raw=true "mrYellow diagram")
+![Alt text](/documentation/figures/diagram.png?raw=true "mrYellow diagram")
 
 
 
