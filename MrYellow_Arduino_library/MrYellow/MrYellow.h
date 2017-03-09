@@ -33,6 +33,20 @@
 #define RIGHT_MOTOR1_BLUE 30
 #define RIGHT_MOTOR1_MAX 1300
 
+//left arm constants
+#define LEFT_MOTOR2_BLACK 44
+#define LEFT_MOTOR2_WHITE 46
+#define LEFT_MOTOR2_PWM 10
+#define LEFT_MOTOR2_YELLOW 2
+#define LEFT_MOTOR2_BLUE 42
+#define LEFT_MOTOR1_BLACK 38
+#define LEFT_MOTOR1_WHITE 40
+#define LEFT_MOTOR1_PWM 11
+#define LEFT_MOTOR1_YELLOW 3
+#define LEFT_MOTOR1_BLUE 36
+#define LEFT_MOTOR1_MAX 1300
+
+
 
 
 //right motor is motor 1 (base motors)
@@ -216,3 +230,59 @@ long t0=millis();
 analogWrite(RIGHT_MOTOR1_PWM,0);
 }
 
+
+void left_up_2(int power,Encoder & enc){
+analogWrite(LEFT_MOTOR2_PWM,power);
+digitalWrite(LEFT_MOTOR2_BLACK,LOW);
+digitalWrite(LEFT_MOTOR2_WHITE,HIGH);
+boolean cond=true;
+long t0=millis();
+while((enc.read()*-0.5)<120 && cond){  cond=(millis()-t0)<3000;  }
+analogWrite(LEFT_MOTOR2_PWM,0);
+enc.write(120*-2);
+}
+
+void left_down_2(int power,Encoder & enc){
+analogWrite(LEFT_MOTOR2_PWM,power);
+digitalWrite(LEFT_MOTOR2_BLACK,HIGH);
+digitalWrite(LEFT_MOTOR2_WHITE,LOW);
+boolean cond=true;
+long t0=millis();
+while((enc.read()*-0.5)>0 && cond){  cond=(millis()-t0)<3000;  }
+analogWrite(LEFT_MOTOR2_PWM,0);
+enc.write(0);
+}
+
+
+void left_up_1(int power,Encoder & enc){
+analogWrite(LEFT_MOTOR1_PWM,power);
+digitalWrite(LEFT_MOTOR1_BLACK,HIGH);
+digitalWrite(LEFT_MOTOR1_WHITE,LOW);
+boolean cond=true;
+int prev=enc.read();
+
+long t0=millis();
+    while((enc.read())<LEFT_MOTOR1_MAX && cond){  
+    if ((millis()-t0)>100){
+    if ((enc.read()-prev)>10 ){  cond=true; prev=enc.read(); t0=millis(); }
+    else{cond = false; enc.write(LEFT_MOTOR1_MAX+500);}   }
+    }  
+analogWrite(LEFT_MOTOR1_PWM,0);
+}
+
+
+void left_down_1(int power,Encoder & enc){
+analogWrite(LEFT_MOTOR1_PWM,power);
+digitalWrite(LEFT_MOTOR1_BLACK,LOW);
+digitalWrite(LEFT_MOTOR1_WHITE,HIGH);
+boolean cond=true;
+int prev=enc.read();
+
+long t0=millis();
+    while((enc.read())>0 && cond){  
+    if ((millis()-t0)>100){
+    if (abs(enc.read()-prev)>10 ){  cond=true; prev=enc.read(); t0=millis(); }
+    else{cond = false; enc.write(-1500);}   }
+    }  
+analogWrite(LEFT_MOTOR1_PWM,0);
+}
