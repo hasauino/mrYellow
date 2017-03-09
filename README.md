@@ -72,6 +72,15 @@ A diagram for the robot is shown below:
 | AIN2 (2nd motor driver TB6612FNG)              |  motor white wire input   |  46  (Arduino) |
 | PWMA (2nd motor driver TB6612FNG)              |  motor PWM   |  10  (Arduino) |
 
+4. Head Servo
+
+| wire          | functionality | pin # |
+| ------------- |---------------| ------|
+| Brown         |  GND      |  GND (Arduino, GND is common with the tetrix servo controller) |
+| Red         |  5V      |  5V (tetrix servo controller (i.e. servo takes power from tetrix servo controller)  |
+| Orane           |  servo signal  |  xxxx (Arduino) |
+
+
 
 
 ##Software
