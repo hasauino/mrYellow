@@ -7,11 +7,13 @@ A diagram for the robot is shown below:
 ![Alt text](/documentation/figures/diagram.png?raw=true "mrYellow diagram")
 
 ### RPi Connections
-Bluetooth to Raspberry pi:
-red(5V)				---> 5V
-black(GND)			---> GND
-white(RX)			---> UART0 TX
-Green(TX)			---> UART0 RX
+
+| Bluetooth module          | RPi |
+| ------------- |---------------|
+| red(5V)         |  5V      |  
+|black(GND)|GND|
+|white(RX)			 |UART0 TX|
+|Green(TX)|UART0 RX|
 
 ### Arduino Connections
 1. Right arm motor 1
