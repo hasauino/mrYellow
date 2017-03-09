@@ -23,7 +23,7 @@ A diagram for the robot is shown below:
 | BIN2 (1st motor driver TB6612FNG)              |  motor white wire input   |  34  (Arduino) |
 | PWMB (1st motor driver TB6612FNG)              |  motor PWM   |  12  (Arduino) |
 
-1. Right arm motor 2
+2. Right arm motor 2
 
 | wire          | functionality | pin # |
 | ------------- |---------------| ------|
@@ -36,6 +36,20 @@ A diagram for the robot is shown below:
 | AIN1 (1st motor driver TB6612FNG)              |  motor black wire input   |  26  (Arduino) |
 | AIN2 (1st motor driver TB6612FNG)              |  motor white wire input   |  28  (Arduino) |
 | PWMA (1st motor driver TB6612FNG)              |  motor PWM   |  13  (Arduino) |
+
+3. Left arm motor 1
+
+| wire          | functionality | pin # |
+| ------------- |---------------| ------|
+| black         |  power +      |  B01 (2nd motor driver TB6612FNG) |
+| white         |  power -      |  B02 (2nd motor driver TB6612FNG)  |
+| red           |  Encoder GND  |  GND (Arduino) |
+| Green         |  Encoder 4.5V |  5v  (Arduino)|
+| Yellow        |  Encoder 1    |  17  (Arduino, interrupt) |
+| Blue          |  Encoder 2    |  36  (Arduino) |
+| AIN1 (1st motor driver TB6612FNG)              |  motor black wire input   |  38  (Arduino) |
+| AIN2 (1st motor driver TB6612FNG)              |  motor white wire input   |  40  (Arduino) |
+| PWMA (1st motor driver TB6612FNG)              |  motor PWM   |  11  (Arduino) |
 
 
 
