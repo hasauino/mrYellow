@@ -1,46 +1,58 @@
+#include <Servo.h>
 #include <Encoder.h>
 #include <Wire.h>
 #include <MrYellow.h>
 
+#define FACE_SERVO_ZERO 95
+#define RIGHT_SERVO_MIN 30
+#define RIGHT_SERVO_MAX 70
+#define LEFT_SERVO_MIN 30
+#define LEFT_SERVO_MAX 70
+#define HEAD_SERVO_MID 100
 
-#define fwd_button 0
-#define bwd_button 1
-#define left_button 2
-#define right_button 3
-#define rightArm_button 4
-#define leftArm_button 5
-#define headCW 6
-#define headCCW 7
-#define face 8
 
+//buttons array, it stores the state of each button, true means pressed, false means released. the "check_buttons()"
+//function should be called to update the status of each button
 //                fwd_button  bwd_button  left_button right_button  rightArm_button leftArm_button  headCW    headCCW   face
 boolean buttons[]={0,            0,              0,       0,              0,            0,           0,       0,       0};
-int temp=0;
-int power=0;
-boolean rightarm_status=false;
+
+//Encoder instances
 Encoder right_arm_enc1(RIGHT_MOTOR1_YELLOW,RIGHT_MOTOR1_BLUE);
 Encoder right_arm_enc2(RIGHT_MOTOR2_YELLOW,RIGHT_MOTOR2_BLUE);
+Encoder left_arm_enc1(LEFT_MOTOR1_YELLOW,LEFT_MOTOR1_BLUE);
+Encoder left_arm_enc2(LEFT_MOTOR2_YELLOW,LEFT_MOTOR2_BLUE);
+
+//Servo instances
+Servo headServo;
+Servo faceServo;
+Servo rightServo;
+Servo leftServo;
+
+
 void setup()
 {
-Serial.begin(115200);
-pinMode(RIGHT_MOTOR1_BLACK,OUTPUT);
-pinMode(RIGHT_MOTOR1_WHITE,OUTPUT);
-pinMode(RIGHT_MOTOR1_PWM,OUTPUT);
-digitalWrite(RIGHT_MOTOR1_BLACK,LOW);
-digitalWrite(RIGHT_MOTOR1_WHITE,LOW);
-analogWrite(RIGHT_MOTOR1_PWM,100);
+Serial.begin(115200);//should be called here, the "check_buttons" uses the serial port to read serial message from RPi and update buttons' status
+setModes();  //needed to control the base motors (initialization)
+arm_motors_init();  //needed to control arms nxt motors (initialization)
+headServo.attach(31);
+faceServo.attach(33);
+rightServo.attach(35);
+leftServo.attach(37);
 
-setModes();
-
-
+faceServo.write(FACE_SERVO_ZERO);
+rightServo.write(RIGHT_SERVO_MAX);
+leftServo.write(LEFT_SERVO_MAX);
 }
 
 void loop()
 {
+headServo.write(100);
 
 
-check_buttons(buttons);
+
 /*
+check_buttons(buttons);
+
 if(buttons[fwd_button] && !buttons[left_button] && !buttons[right_button]){fwd(20);} 
 if(buttons[bwd_button] && !buttons[left_button] && !buttons[right_button]){ bwd(20);} 
 if(buttons[left_button]){left(20);}
@@ -73,17 +85,6 @@ digitalWrite(LEFT_MOTOR1_WHITE,HIGH);
 }
 
 */
-if(buttons[fwd_button]){
-fwd(20);
-delay(1000);
-
-}
-
-if(!buttons[fwd_button]){stop();}
-
-
-
-
 
 
 
