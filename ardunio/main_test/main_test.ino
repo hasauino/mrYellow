@@ -13,8 +13,8 @@
 
 //buttons array, it stores the state of each button, true means pressed, false means released. the "check_buttons()"
 //function should be called to update the status of each button
-//                fwd_button  bwd_button  left_button right_button  rightArm_button leftArm_button  headCW    headCCW   face
-boolean buttons[]={0,            0,              0,       0,              0,            0,           0,       0,       0};
+//                fwd_button  bwd_button  left_button right_button  rightArm_button leftArm_button  headCW    headCCW   face	select	  start
+boolean buttons[]={0,            0,              0,       0,              0,            0,           0,       0,       0,	0,	0};
 
 //Encoder instances
 Encoder right_arm_enc1(RIGHT_MOTOR1_YELLOW,RIGHT_MOTOR1_BLUE);
@@ -85,13 +85,13 @@ digitalWrite(LEFT_MOTOR1_WHITE,HIGH);
 
 
 
-if(!buttons[rightArm_button] && !buttons[leftArm_button] && buttons[headCW]){
+if(!buttons[rightArm_button] && !buttons[select_button] && !buttons[start_button] && !buttons[leftArm_button] && buttons[headCW]){
 headServo.write(headAngle);
 if (millis()-timeHead>50){headAngle++; timeHead=millis();}
 if(headAngle>150){headAngle=150;}
 }
 
-if(!buttons[rightArm_button] && !buttons[leftArm_button] && buttons[headCCW]){
+if(!buttons[rightArm_button] && !buttons[select_button] && !buttons[start_button] && !buttons[leftArm_button] && buttons[headCCW]){
 headServo.write(headAngle);
 if (millis()-timeHead>50){headAngle--; timeHead=millis();}
 if(headAngle<50){headAngle=50;}
