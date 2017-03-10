@@ -29,7 +29,7 @@ Servo rightServo;
 Servo leftServo;
 
 int headAngle=HEAD_SERVO_MID;
-int timeHead=0;
+unsigned long timeHead=0;
 void setup()
 {
 Serial.begin(115200);//should be called here, the "check_buttons" uses the serial port to read serial message from RPi and update buttons' status
@@ -59,13 +59,13 @@ if(buttons[right_button]){right(20);}
 if (!buttons[0] && !buttons[1] && !buttons[2] && !buttons[3]){stop();  analogWrite(RIGHT_MOTOR1_PWM,0); analogWrite(LEFT_MOTOR1_PWM,0); analogWrite(RIGHT_MOTOR2_PWM,0); analogWrite(LEFT_MOTOR2_PWM,0); }
 
 if(buttons[rightArm_button] && buttons[headCW]){
-  analogWrite(RIGHT_MOTOR1_PWM,100);
+  analogWrite(RIGHT_MOTOR1_PWM,150);
 digitalWrite(RIGHT_MOTOR1_BLACK,HIGH);
 digitalWrite(RIGHT_MOTOR1_WHITE,LOW);
 }
 
 if(buttons[rightArm_button] && buttons[headCCW]){
-  analogWrite(RIGHT_MOTOR1_PWM,100);
+  analogWrite(RIGHT_MOTOR1_PWM,150);
 digitalWrite(RIGHT_MOTOR1_BLACK,LOW);
 digitalWrite(RIGHT_MOTOR1_WHITE,HIGH);
 }
@@ -86,7 +86,6 @@ digitalWrite(LEFT_MOTOR1_WHITE,HIGH);
 
 
 if(!buttons[rightArm_button] && !buttons[leftArm_button] && buttons[headCW]){
-
 headServo.write(headAngle);
 if (millis()-timeHead>50){headAngle++; timeHead=millis();}
 if(headAngle>150){headAngle=150;}
@@ -97,6 +96,9 @@ headServo.write(headAngle);
 if (millis()-timeHead>50){headAngle--; timeHead=millis();}
 if(headAngle<50){headAngle=50;}
 }
+
+
+
 
 
 }
