@@ -78,7 +78,17 @@ A diagram for the robot is shown below:
 | ------------- |---------------| ------|
 | Brown         |  GND      |  GND (Arduino, GND is common with the tetrix servo controller) |
 | Red         |  5V      |  5V (tetrix servo controller (i.e. servo takes power from tetrix servo controller)  |
-| Orane           |  servo signal  |  xxxx (Arduino) |
+| Orane           |  servo signal  |  31 (Arduino) |
+
+
+
+4. Right arm Servo
+
+| wire          | functionality | pin # |
+| ------------- |---------------| ------|
+| Brown         |  GND      |  GND (Arduino, GND is common with the tetrix servo controller) |
+| Red         |  5V      |  5V (tetrix servo controller (i.e. servo takes power from tetrix servo controller)  |
+| Orane           |  servo signal  |  33 (Arduino) |
 
 
 
