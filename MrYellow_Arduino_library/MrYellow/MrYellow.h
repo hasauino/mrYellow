@@ -20,6 +20,22 @@
 #define HEAD_CCW 50
 #define FACE 102
 
+//Buttons
+//                fwd_button  bwd_button  left_button right_button  rightArm_button leftArm_button  headCW    headCCW   face
+//boolean buttons[]={0,            0,              0,       0,              0,            0,           0,       0,       0};
+
+#define fwd_button 0
+#define bwd_button 1
+#define left_button 2
+#define right_button 3
+#define rightArm_button 4
+#define leftArm_button 5
+#define headCW 6
+#define headCCW 7
+#define face 8
+
+
+
 //right arm constants
 #define RIGHT_MOTOR2_BLACK 26
 #define RIGHT_MOTOR2_WHITE 28
@@ -31,7 +47,7 @@
 #define RIGHT_MOTOR1_PWM 12
 #define RIGHT_MOTOR1_YELLOW 18
 #define RIGHT_MOTOR1_BLUE 30
-#define RIGHT_MOTOR1_MAX 1300
+#define RIGHT_MOTOR1_MAX 600
 
 //left arm constants
 #define LEFT_MOTOR2_BLACK 44
@@ -48,7 +64,7 @@
 
 
 
-
+//Tetrix Motor controller
 //right motor is motor 1 (base motors)
 //left motor is motor 2 (base motors) 
 
@@ -114,13 +130,7 @@ motor1(0);
 motor2(0);
 }
 
-
-
-
-//                fwd_button  bwd_button  left_button right_button  rightArm_button leftArm_button  headCW    headCCW   face
-//boolean buttons[]={0,            0,              0,       0,              0,            0,           0,       0,       0};
-
-
+ 
 
 void check_buttons(boolean * buttons){
 	
@@ -165,8 +175,8 @@ switch (b[i]) {
     case FACE:
   *(buttons+8)=1;
       break; 
-   default: 
-  for (int i=0;i<9;i++) {*(buttons+i)=0;};
+  // default: 
+ // for (int i=0;i<9;i++) {*(buttons+i)=0;};
   }}}}
 
 }
@@ -179,9 +189,9 @@ digitalWrite(RIGHT_MOTOR2_BLACK,LOW);
 digitalWrite(RIGHT_MOTOR2_WHITE,HIGH);
 boolean cond=true;
 long t0=millis();
-while((enc.read()*-0.5)<120 && cond){  cond=(millis()-t0)<3000;  }
+while((enc.read()*-0.5)<90 && cond){  cond=(millis()-t0)<3000;  }
 analogWrite(RIGHT_MOTOR2_PWM,0);
-enc.write(120*-2);
+enc.write(90*-2);
 }
 
 
@@ -286,3 +296,23 @@ long t0=millis();
     }  
 analogWrite(LEFT_MOTOR1_PWM,0);
 }
+
+void arm_motors_init(){
+pinMode(RIGHT_MOTOR1_BLACK,OUTPUT);
+pinMode(RIGHT_MOTOR1_WHITE,OUTPUT);
+pinMode(RIGHT_MOTOR1_PWM,OUTPUT);
+
+pinMode(RIGHT_MOTOR2_BLACK,OUTPUT);
+pinMode(RIGHT_MOTOR2_WHITE,OUTPUT);
+pinMode(RIGHT_MOTOR2_PWM,OUTPUT);
+
+pinMode(LEFT_MOTOR1_BLACK,OUTPUT);
+pinMode(LEFT_MOTOR1_WHITE,OUTPUT);
+pinMode(LEFT_MOTOR1_PWM,OUTPUT);
+
+pinMode(LEFT_MOTOR2_BLACK,OUTPUT);
+pinMode(LEFT_MOTOR2_WHITE,OUTPUT);
+pinMode(LEFT_MOTOR2_PWM,OUTPUT);
+	}
+
+
