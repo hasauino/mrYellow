@@ -13,9 +13,9 @@ A repository containing everything related to mrYellow robot.
 
 1. After switching ON RPi, it will boot and start te following:
 
-  1. Image sequance: the RPi will change a picture each 10 sec. images are located in "~/mrYellow/pic".
+  1. Image sequance: the RPi changes a picture each 10 sec. images are located in "~/mrYellow/pic".
   
-  2. Python script ("main.py"): main.py is a python script run at boot, it is located in "~/mrYellow/scripts".
+  2. Python script ("main.py"): main.py is a python script which is run at boot, it is located in "~/mrYellow/scripts".
 
 ##Software
 
