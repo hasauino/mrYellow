@@ -4,7 +4,7 @@ A repository containing everything related to mrYellow robot.
 
 
 ##General Instructions
-![Alt text](/documentation/figures/back.jpg?raw=true "mrYellow back")
+![Alt text](/documentation/figures/back.png?raw=true "mrYellow back")
 
 ##Software
 
