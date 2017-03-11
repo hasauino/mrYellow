@@ -89,7 +89,7 @@ A diagram for the robot is shown below:
 |Green(TX)|UART0 RX|
 
 ### Arduino Connections
-l. Right arm motor 1
+1. Right arm motor 1
 
 | wire          | functionality | pin # |
 | ------------- |---------------| ------|
@@ -103,7 +103,7 @@ l. Right arm motor 1
 | BIN2 (1st motor driver TB6612FNG)              |  motor white wire input   |  34  (Arduino) |
 | PWMB (1st motor driver TB6612FNG)              |  motor PWM   |  12  (Arduino) |
 
-l. Right arm motor 2
+1. Right arm motor 2
 
 | wire          | functionality | pin # |
 | ------------- |---------------| ------|
@@ -117,7 +117,7 @@ l. Right arm motor 2
 | AIN2 (1st motor driver TB6612FNG)              |  motor white wire input   |  28  (Arduino) |
 | PWMA (1st motor driver TB6612FNG)              |  motor PWM   |  13  (Arduino) |
 
-3. Left arm motor 1
+1. Left arm motor 1
 
 | wire          | functionality | pin # |
 | ------------- |---------------| ------|
@@ -131,7 +131,7 @@ l. Right arm motor 2
 | BIN2 (2nd motor driver TB6612FNG)              |  motor white wire input   |  40  (Arduino) |
 | PWMB (2nd motor driver TB6612FNG)              |  motor PWM   |  11  (Arduino) |
 
-4. Left arm motor 2
+1. Left arm motor 2
 
 | wire          | functionality | pin # |
 | ------------- |---------------| ------|
@@ -145,7 +145,7 @@ l. Right arm motor 2
 | AIN2 (2nd motor driver TB6612FNG)              |  motor white wire input   |  46  (Arduino) |
 | PWMA (2nd motor driver TB6612FNG)              |  motor PWM   |  10  (Arduino) |
 
-4. Head Servo
+1. Head Servo
 
 | wire          | functionality | pin # |
 | ------------- |---------------| ------|
@@ -155,7 +155,7 @@ l. Right arm motor 2
 
 
 
-4. Face Servo
+1. Face Servo
 
 | wire          | functionality | pin # |
 | ------------- |---------------| ------|
@@ -163,7 +163,7 @@ l. Right arm motor 2
 | Red         |  5V      |  5V (tetrix servo controller (i.e. servo takes power from tetrix servo controller)  |
 | Orane           |  servo signal  |  33 (Arduino) |
 
-4. Right Servo
+1. Right Servo
 
 | wire          | functionality | pin # |
 | ------------- |---------------| ------|
@@ -172,7 +172,7 @@ l. Right arm motor 2
 | Orane           |  servo signal  |  35 (Arduino) |
 
 
-4. Left Servo
+1. Left Servo
 
 | wire          | functionality | pin # |
 | ------------- |---------------| ------|
