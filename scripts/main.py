@@ -2,7 +2,7 @@ from multiprocessing import Process, Queue
 from time import time,sleep
 import numpy as np
 import cv2
-from subprocess import call
+from subprocess import call,Popen
 import serial
 from copy import copy
 
@@ -27,7 +27,7 @@ def face_detection(q):
             q.put(num_faces)
             if num_faces>0:
                     t0=time()
-                    call(['aplay','/home/pi/mrYellow/soundFiles/ar_marhaban.wav'])
+                    call(['aplay','/home/pi/mrYellow/soundFiles/hi.wav'])
                     while ((time()-t0)<10):
                             detectFaces(cap,cv2,face_cascade)
 
@@ -59,12 +59,32 @@ def arduino_bluetooth(q):
                     face=0
             if face==1:
                 buttons.append('f')
-            print list(set(buttons))
+            print buttons
+            
             ser_arduino.write(chr(123))
             ser_arduino.write(chr(55))
             ser_arduino.write(chr(len(set(buttons))))
             for b in set(buttons):
                     ser_arduino.write(b)
+
+            if ('5' in buttons) and ('1' in buttons):
+                    call(['aplay','/home/pi/mrYellow/soundFiles/ar_marhaban.wav'])
+                    ser.read(ser.in_waiting)
+                    buttons=['0']
+                    print ser.in_waiting
+
+            if ('5' in buttons) and ('2' in buttons):
+                    call(['aplay','/home/pi/mrYellow/soundFiles/destroy.wav'])
+                    ser.read(ser.in_waiting)
+                    buttons=['0']
+                    print ser.in_waiting
+                    
+            if ('5' in buttons) and ('3' in buttons):
+                    call(['aplay','/home/pi/mrYellow/soundFiles/hi.wav'])
+                    ser.read(ser.in_waiting)
+                    buttons=['0']
+                    print ser.in_waiting                  
+                    
 
 
 
