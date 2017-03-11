@@ -40,6 +40,11 @@ Very important: **Inside the app, go to settings, and set the delay to a value h
 |     leftArm_button + right_button     |    move leftArm motor 2 (elbow joint) down    |
 |     rightArm_button + left_button     |    move rightArm motor 2 (elbow joint) up    |
 |     rightArm_button + right_button     |    move rightArm motor 2 (elbow joint) down    |
+|     select_button + any other button (except start_button)    |    play a sound file    |
+|     start_button + headCW    |    left arm gripper (servo) open    |
+|     start_button + headCCW    |    left arm gripper (servo) close    |
+|     start_button + fwd_button    |    right arm gripper (servo) open    |
+|     start_button + bwd_button    |    right arm gripper (servo) close    |
 
 
 
