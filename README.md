@@ -89,7 +89,7 @@ A diagram for the robot is shown below:
 |Green(TX)|UART0 RX|
 
 ### Arduino Connections
-1. Right arm motor 1
+l. Right arm motor 1
 
 | wire          | functionality | pin # |
 | ------------- |---------------| ------|
@@ -103,7 +103,7 @@ A diagram for the robot is shown below:
 | BIN2 (1st motor driver TB6612FNG)              |  motor white wire input   |  34  (Arduino) |
 | PWMB (1st motor driver TB6612FNG)              |  motor PWM   |  12  (Arduino) |
 
-2. Right arm motor 2
+l. Right arm motor 2
 
 | wire          | functionality | pin # |
 | ------------- |---------------| ------|
