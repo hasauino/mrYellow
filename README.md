@@ -24,6 +24,11 @@ Very important: **Inside the app, go to settings, and set the delay to a value h
 ![Alt text](/documentation/figures/buttons.png?raw=true "app for controlling mrYellow")
 
 
+| buttons pressed        | action |
+| ------------- |---------------|
+|     fwd_button     |    move forward    |  
+
+
 
 ###Auto start python script at boot
 The last line in the "crontab" has the commnad to start the python script at boot.
