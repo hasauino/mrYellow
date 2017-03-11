@@ -30,7 +30,7 @@ You can access the robot using SSH, using the following command:
 ```
 ssh pi@xxx.xxx.xxx.xxx
 ```
-where xxx.xxx.xxx.xxx is the IP address of the robot. You can know robot's IP address from the router settings page. Or from the robot, type the follwoing command in the terminal:
+where xxx.xxx.xxx.xxx is the IP address of the robot. You can get robot's IP address from the router settings page. Or from the robot, type the follwoing command in the terminal:
 ```
 ifconfig
 ```
