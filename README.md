@@ -4,7 +4,14 @@ A repository containing everything related to mrYellow robot.
 
 ##Software
 ###Overview
-mrYellow has a raspberry pi that is responsible for running a python script, and a bash command at system boot.
+mrYellow consists of a raspberry pi 3, and an Arduino Mega. The raspberry pi is responsible for running the face detection, and receiving bluetooth commands on its UART port. The two processes are running in parallel as a python script named "main.py"
+The "main.py" script, receives bluetooth commands and passes them to the arduino as a serial message.
+The arduino, recieves this message, and controlles the hardware accordingly.
+
+
+
+
+
 ###Android App
 Android app used:  https://play.google.com/store/apps/details?id=com.heightdev.arduinobtjoysticklite&hl=en
 Inside the app, go to settings, and set the delay to a value higher than 100 ms
