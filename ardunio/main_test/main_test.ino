@@ -3,6 +3,8 @@
 #include <Wire.h>
 #include <MrYellow.h>
 
+unsigned long t0=0;
+#define robotSpeed 20
 
 //buttons array, it stores the state of each button, true means pressed, false means released. the "check_buttons()"
 //function should be called to update the status of each button
@@ -31,6 +33,7 @@ int leftAngle=LEFT_SERVO_MAX;
 unsigned long timeLeft=0;
 void setup()
 {
+Wire.begin();
 Serial.begin(115200);//should be called here, the "check_buttons" uses the serial port to read serial message from RPi and update buttons' status
 setModes();  //needed to control the base motors (initialization)
 arm_motors_init();  //needed to control arms nxt motors (initialization)
@@ -47,22 +50,32 @@ headServo.write(HEAD_SERVO_MID);
 
 void loop()
 {
+
 check_buttons(buttons);  //update buttons status
 
 //Forward
-if(buttons[fwd_button] && !buttons[left_button] && !buttons[right_button] && !buttons[select_button] && !buttons[start_button]) {fwd(20);} 
+if(buttons[fwd_button] && !buttons[left_button] && !buttons[right_button] && !buttons[select_button] && !buttons[start_button]) 
+{fwd(robotSpeed); } 
 
 //Backward  
-if(buttons[bwd_button] && !buttons[left_button] && !buttons[right_button] && !buttons[select_button] && !buttons[start_button]){ bwd(20);} 
+if(buttons[bwd_button] && !buttons[left_button] && !buttons[right_button] && !buttons[select_button] && !buttons[start_button])
+{ 
+  if ((millis()-t0)>1000){bwd(robotSpeed); t0=millis();}
+  
+} 
 
-//left
-if(buttons[left_button] && !buttons[leftArm_button] && !buttons[rightArm_button] && !buttons[select_button] && !buttons[start_button]){left(20);}
-
-//right
-if(buttons[right_button] && !buttons[leftArm_button] && !buttons[rightArm_button] && !buttons[select_button] && !buttons[start_button]){right(20);}
 
 //reset (turn motors off if no button is pressed)
 if (!buttons[fwd_button] && !buttons[bwd_button] && !buttons[left_button] && !buttons[right_button]){stop();  analogWrite(RIGHT_MOTOR1_PWM,0); analogWrite(LEFT_MOTOR1_PWM,0); analogWrite(RIGHT_MOTOR2_PWM,0); analogWrite(LEFT_MOTOR2_PWM,0); }
+
+
+
+//left
+if(buttons[left_button] && !buttons[leftArm_button] && !buttons[rightArm_button] && !buttons[select_button] && !buttons[start_button]){
+if ((millis()-t0)>1000){left(robotSpeed); t0=millis();} }
+
+//right
+if(buttons[right_button] && !buttons[leftArm_button] && !buttons[rightArm_button] && !buttons[select_button] && !buttons[start_button]){right(robotSpeed); }
 
 
 //rightArm motor1 up
@@ -168,5 +181,8 @@ leftServo.write(leftAngle);
 if (millis()-timeLeft>20){leftAngle++; timeLeft=millis();}
 if(leftAngle>LEFT_SERVO_MAX){leftAngle=LEFT_SERVO_MAX;}
 }
+
+
+
 
 }
