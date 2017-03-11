@@ -17,7 +17,7 @@ A repository containing everything related to mrYellow robot.
   
   * Python script ("main.py"): main.py is a python script which is run at boot, it is located in "~/mrYellow/scripts".
   
-* To stop the image sequence, connect a keyboard and press "Esc". To stop the python script, open a terminal (CTRL+ALT+t) and type the following command:
+* To stop the image sequence, connect a keyboard (to the USB hub) and press "Esc". To stop the python script, open a terminal (CTRL+ALT+t) and type the following command:
 ```
 sudo pkill python
 ```
