@@ -16,6 +16,11 @@ A repository containing everything related to mrYellow robot.
   1. Image sequance: the RPi changes a picture each 10 sec. images are located in "~/mrYellow/pic".
   
   2. Python script ("main.py"): main.py is a python script which is run at boot, it is located in "~/mrYellow/scripts".
+  
+1. Control the robot using the android app (listed below). When you open the app, press on "connect", choose "mrYellow". The bluetooth password is:
+```
+1234
+```
 
 ##Software
 
