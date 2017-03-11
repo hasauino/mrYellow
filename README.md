@@ -45,6 +45,8 @@ Very important: **Inside the app, go to settings, and set the delay to a value h
 |     start_button + headCCW    |    left arm gripper (servo) close    |
 |     start_button + fwd_button    |    right arm gripper (servo) open    |
 |     start_button + bwd_button    |    right arm gripper (servo) close    |
+|     start_button + left_button    |    rotate face servo counter clock wise    |
+|     start_button + left_button    |    rotate face servo clock wise    |
 
 
 
