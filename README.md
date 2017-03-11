@@ -2,7 +2,12 @@
 
 A repository containing everything related to mrYellow robot.
 
+
+##General Instructions
+![Alt text](/documentation/figures/back.jpg?raw=true "mrYellow back")
+
 ##Software
+
 ###Overview
 mrYellow consists of a raspberry pi 3, and an Arduino Mega. The raspberry pi is responsible for running the face detection, and receiving bluetooth commands on its UART port. The two processes are running in parallel as a python script named "main.py".
 
