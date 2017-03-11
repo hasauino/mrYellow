@@ -26,7 +26,12 @@ Very important: **Inside the app, go to settings, and set the delay to a value h
 
 | buttons pressed        | action |
 | ------------- |---------------|
-|     fwd_button     |    move forward    |  
+|     fwd_button     |    move forward    | 
+|     bwd_button     |    move backward    |
+|     right_button     |    rotate to the right    |
+|     left_button     |    rotate to the left    |
+|     headCW     |    rotate head clockwise    |
+|     headCCW     |    rotate head counter clockwise    |
 
 
 
