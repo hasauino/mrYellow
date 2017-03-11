@@ -3,6 +3,8 @@
 A repository containing everything related to mrYellow robot.
 
 ##Software
+###Overview
+mrYellow has a raspberry pi that is responsible for running a python script, and a bash command at system boot.
 ###Android App
 Android app used:  https://play.google.com/store/apps/details?id=com.heightdev.arduinobtjoysticklite&hl=en
 Inside the app, go to settings, and set the delay to a value higher than 100 ms
