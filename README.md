@@ -11,7 +11,7 @@ A repository containing everything related to mrYellow robot.
 
 1. After you shutdown RPi, after the screen goes black, wait 20 sec, and then switch OFF the power (to make sure RPi is completely shutdown).
 
-1. After switching ON RPi, it will boot and start te following:
+1. After switching ON RPi, it will boot and start the following processes:
 
   1. Image sequance: the RPi changes a picture each 10 sec. images are located in "~/mrYellow/pic".
   
