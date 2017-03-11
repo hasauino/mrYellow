@@ -5,23 +5,23 @@ A repository containing everything related to mrYellow robot.
 ##General Instructions
 ![Alt text](/documentation/figures/back.png?raw=true "mrYellow back")
 
-1. Do NOT charge while the Raspberry pi (RPi) switch or the motors/speaker switch are ON. Before charging, shutdown down the RPi and switch it OFF, also switch OFF the motors/speaker power. After that you can plug the power cable into one of the charging slots. You should see a red light near the right arm shoulder.
+* Do NOT charge while the Raspberry pi (RPi) switch or the motors/speaker switch are ON. Before charging, shutdown down the RPi and switch it OFF, also switch OFF the motors/speaker power. After that you can plug the power cable into one of the charging slots. You should see a red light near the right arm shoulder.
 
-1. Charging requires at least 7 hours.
+* Charging requires at least 7 hours.
 
-1. After you shutdown RPi, after the screen goes black, wait 20 sec, and then switch OFF the power (to make sure RPi is completely shutdown).
+* After you shutdown RPi, after the screen goes black, wait 20 sec, and then switch OFF the power (to make sure RPi is completely shutdown).
 
-1. After switching ON RPi, it will boot and start the following processes:
+* After switching ON RPi, it will boot and start the following processes:
 
-  1. Image sequence: the RPi changes a picture each 10 sec. images are located in "~/mrYellow/pic".
+  * Image sequence: the RPi changes a picture each 10 sec. images are located in "~/mrYellow/pic".
   
-  2. Python script ("main.py"): main.py is a python script which is run at boot, it is located in "~/mrYellow/scripts".
+  * Python script ("main.py"): main.py is a python script which is run at boot, it is located in "~/mrYellow/scripts".
   
-1. To stop the image sequence, connect a keyboard and press "Esc". To stop the python script, open a terminal (CTRL+ALT+t) and type the following command:
+* To stop the image sequence, connect a keyboard and press "Esc". To stop the python script, open a terminal (CTRL+ALT+t) and type the following command:
 ```
 sudo pkill python
 ```
-1. Control the robot using the android app (listed below). When you open the app, press on "connect", choose "mrYellow". The bluetooth password is:
+* Control the robot using the android app (listed below). When you open the app, press on "connect", choose "mrYellow". The bluetooth password is:
 ```
 1234
 ```
