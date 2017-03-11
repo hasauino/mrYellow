@@ -18,7 +18,7 @@ The arduino, recieves this message, and controlles the hardware accordingly.
 Android app used:  https://play.google.com/store/apps/details?id=com.heightdev.arduinobtjoysticklite&hl=en
 
 
-Very important: **Inside the app, go to settings, and set the delay to a value higher than 100 ms**
+Very important: **Inside the app, go to settings, and set the delay to a value higher than 100 ms**, (100 ms is perfect!)
 
 
 ![Alt text](/documentation/figures/buttons.png?raw=true "app for controlling mrYellow")
