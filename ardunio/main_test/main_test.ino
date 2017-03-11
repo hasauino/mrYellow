@@ -66,7 +66,12 @@ if(buttons[bwd_button] && !buttons[left_button] && !buttons[right_button] && !bu
 
 
 //reset (turn motors off if no button is pressed)
-if (!buttons[fwd_button] && !buttons[bwd_button] && !buttons[left_button] && !buttons[right_button]){stop();  analogWrite(RIGHT_MOTOR1_PWM,0); analogWrite(LEFT_MOTOR1_PWM,0); analogWrite(RIGHT_MOTOR2_PWM,0); analogWrite(LEFT_MOTOR2_PWM,0); }
+if (!buttons[fwd_button] && !buttons[bwd_button] && !buttons[left_button] && !buttons[right_button]){
+stop();  analogWrite(RIGHT_MOTOR1_PWM,0);
+analogWrite(LEFT_MOTOR1_PWM,0); 
+analogWrite(RIGHT_MOTOR2_PWM,0); analogWrite(LEFT_MOTOR2_PWM,0);
+faceServo.write(FACE_SERVO_ZERO);
+}
 
 
 
@@ -182,7 +187,13 @@ if (millis()-timeLeft>20){leftAngle++; timeLeft=millis();}
 if(leftAngle>LEFT_SERVO_MAX){leftAngle=LEFT_SERVO_MAX;}
 }
 
+//face ccw
+if(buttons[start_button] && buttons[left_button]){
+faceServo.write(80);}
 
+//face cw
+if(buttons[start_button] && buttons[right_button]){
+faceServo.write(110);}
 
 
 }

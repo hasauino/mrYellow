@@ -8,7 +8,7 @@
 #define M1_POWER 0x45
 #define M2_MODE 0x47
 #define M2_POWER 0x46
-#define MODE 0x00//0x10
+#define MODE 0x00
 #define NONE 48
 #define FWD 55
 #define BWD 57
@@ -80,18 +80,17 @@
 
 
 void setModes(){
-Wire.begin(); 
-Wire.beginTransmission(DEVICE_ADDRESS);
-Wire.write(M1_MODE); 
-Wire.write(MODE); 
-Wire.endTransmission(0);
-delay(10);
-Wire.begin(); 
+delay(100);
 Wire.beginTransmission(DEVICE_ADDRESS);
 Wire.write(M2_MODE); 
 Wire.write(MODE); 
 Wire.endTransmission(0);
-delay(10);
+delay(100);
+Wire.beginTransmission(DEVICE_ADDRESS);
+Wire.write(M1_MODE); 
+Wire.write(MODE); 
+Wire.endTransmission(0);
+delay(100);
 }
 
 void motor1(int power){
