@@ -21,7 +21,7 @@ A repository containing everything related to mrYellow robot.
 ```
 sudo pkill python
 ```
-* Control the robot using the android app (listed below). When you open the app, press on "connect", choose "mrYellow". The bluetooth password is:
+* Control the robot using the android app (listed in the software section). When you open the app, press on "connect", choose "mrYellow". The bluetooth password is:
 ```
 1234
 ```
