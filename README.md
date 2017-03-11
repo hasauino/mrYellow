@@ -32,10 +32,10 @@ Very important: **Inside the app, go to settings, and set the delay to a value h
 |     left_button     |    rotate to the left    |
 |     headCW     |    rotate head clockwise    |
 |     headCCW     |    rotate head counter clockwise    |
-|     leftArm_button + headCW     |    move leftArm motor 1 up    |
-|     leftArm_button + headCCW     |    move leftArm motor 1 down    |
-|     rightArm_button + headCW     |    move rightArm motor 1 up    |
-|     rightArm_button + headCCW     |    move rightArm motor 1 down    |
+|     leftArm_button + headCW     |    move leftArm motor 1 (shoulder joint) up     |
+|     leftArm_button + headCCW     |    move leftArm motor 1 (shoulder joint) down    |
+|     rightArm_button + headCW     |    move rightArm motor 1 (shoulder joint) up    |
+|     rightArm_button + headCCW     |    move rightArm motor 1 (shoulder joint) down    |
 
 
 
