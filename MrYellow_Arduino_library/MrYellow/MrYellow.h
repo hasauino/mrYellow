@@ -19,10 +19,12 @@
 #define HEAD_CW 49
 #define HEAD_CCW 50
 #define FACE 102
+#define SELECT 53
+#define START 54
 
 //Buttons
-//                fwd_button  bwd_button  left_button right_button  rightArm_button leftArm_button  headCW    headCCW   face
-//boolean buttons[]={0,            0,              0,       0,              0,            0,           0,       0,       0};
+//                fwd_button  bwd_button  left_button right_button  rightArm_button leftArm_button  headCW    headCCW   face	select	start
+//boolean buttons[]={0,            0,              0,       0,              0,            0,           0,       0,       0,		0,		0};
 
 #define fwd_button 0
 #define bwd_button 1
@@ -33,6 +35,8 @@
 #define headCW 6
 #define headCCW 7
 #define face 8
+#define select_button 9
+#define start_button 10
 
 
 
@@ -62,7 +66,13 @@
 #define LEFT_MOTOR1_BLUE 36
 #define LEFT_MOTOR1_MAX 1300
 
-
+//servos constants
+#define FACE_SERVO_ZERO 95
+#define RIGHT_SERVO_MIN 40
+#define RIGHT_SERVO_MAX 70
+#define LEFT_SERVO_MIN 30
+#define LEFT_SERVO_MAX 70
+#define HEAD_SERVO_MID 90
 
 //Tetrix Motor controller
 //right motor is motor 1 (base motors)
@@ -137,7 +147,7 @@ void check_buttons(boolean * buttons){
 if(Serial.read()==123){
 while(Serial.available()<1);
 if(Serial.read()==55){
-for (int i=0;i<9;i++) {*(buttons+i)=0;}
+for (int i=0;i<11;i++) {*(buttons+i)=0;}
 while(Serial.available()<1);
 int len=Serial.read();
 byte b[len];
@@ -175,8 +185,15 @@ switch (b[i]) {
     case FACE:
   *(buttons+8)=1;
       break; 
-  // default: 
- // for (int i=0;i<9;i++) {*(buttons+i)=0;};
+      
+     case SELECT:
+  *(buttons+9)=1;
+      break; 
+      
+     case START:
+  *(buttons+10)=1;
+      break; 
+
   }}}}
 
 }

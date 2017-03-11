@@ -3,13 +3,6 @@
 #include <Wire.h>
 #include <MrYellow.h>
 
-#define FACE_SERVO_ZERO 95
-#define RIGHT_SERVO_MIN 30
-#define RIGHT_SERVO_MAX 70
-#define LEFT_SERVO_MIN 30
-#define LEFT_SERVO_MAX 70
-#define HEAD_SERVO_MID 90
-
 
 //buttons array, it stores the state of each button, true means pressed, false means released. the "check_buttons()"
 //function should be called to update the status of each button
@@ -30,6 +23,12 @@ Servo leftServo;
 
 int headAngle=HEAD_SERVO_MID;
 unsigned long timeHead=0;
+
+int rightAngle=RIGHT_SERVO_MAX;
+unsigned long timeRight=0;
+
+int leftAngle=LEFT_SERVO_MAX;
+unsigned long timeLeft=0;
 void setup()
 {
 Serial.begin(115200);//should be called here, the "check_buttons" uses the serial port to read serial message from RPi and update buttons' status
@@ -50,60 +49,76 @@ void loop()
 {
 check_buttons(buttons);  //update buttons status
 
+//Forward
 if(buttons[fwd_button] && !buttons[left_button] && !buttons[right_button] && !buttons[select_button] && !buttons[start_button]) {fwd(20);} 
-  
+
+//Backward  
 if(buttons[bwd_button] && !buttons[left_button] && !buttons[right_button] && !buttons[select_button] && !buttons[start_button]){ bwd(20);} 
+
+//left
 if(buttons[left_button] && !buttons[leftArm_button] && !buttons[rightArm_button] && !buttons[select_button] && !buttons[start_button]){left(20);}
+
+//right
 if(buttons[right_button] && !buttons[leftArm_button] && !buttons[rightArm_button] && !buttons[select_button] && !buttons[start_button]){right(20);}
+
+//reset (turn motors off if no button is pressed)
 if (!buttons[fwd_button] && !buttons[bwd_button] && !buttons[left_button] && !buttons[right_button]){stop();  analogWrite(RIGHT_MOTOR1_PWM,0); analogWrite(LEFT_MOTOR1_PWM,0); analogWrite(RIGHT_MOTOR2_PWM,0); analogWrite(LEFT_MOTOR2_PWM,0); }
 
-if(buttons[rightArm_button] && buttons[headCW]){
+
+//rightArm motor1 up
+if(buttons[rightArm_button] && buttons[headCW] && !buttons[select_button] && !buttons[start_button]) {
   analogWrite(RIGHT_MOTOR1_PWM,150);
 digitalWrite(RIGHT_MOTOR1_BLACK,HIGH);
 digitalWrite(RIGHT_MOTOR1_WHITE,LOW);
 }
 
-if(buttons[rightArm_button] && buttons[headCCW]){
+
+//rightArm motor1 down
+if(buttons[rightArm_button] && buttons[headCCW] && !buttons[select_button] && !buttons[start_button]){
   analogWrite(RIGHT_MOTOR1_PWM,150);
 digitalWrite(RIGHT_MOTOR1_BLACK,LOW);
 digitalWrite(RIGHT_MOTOR1_WHITE,HIGH);
 }
 
 
-if(buttons[leftArm_button] && buttons[headCW]){
+//leftArm motor1 up
+if(buttons[leftArm_button] && buttons[headCW] && !buttons[select_button] && !buttons[start_button]){
   analogWrite(LEFT_MOTOR1_PWM,100);
 digitalWrite(LEFT_MOTOR1_BLACK,HIGH);
 digitalWrite(LEFT_MOTOR1_WHITE,LOW);
 }
 
-if(buttons[leftArm_button] && buttons[headCCW]){
+//leftArm motor1 down
+if(buttons[leftArm_button] && buttons[headCCW] && !buttons[select_button] && !buttons[start_button]){
   analogWrite(LEFT_MOTOR1_PWM,100);
 digitalWrite(LEFT_MOTOR1_BLACK,LOW);
 digitalWrite(LEFT_MOTOR1_WHITE,HIGH);
 }
 
 
-
-if(buttons[rightArm_button] && buttons[right_button]){
+//rightArm motor2 up
+if(buttons[rightArm_button] && buttons[right_button] && !buttons[select_button] && !buttons[start_button]){
   analogWrite(RIGHT_MOTOR2_PWM,50);
 digitalWrite(RIGHT_MOTOR2_BLACK,HIGH);
 digitalWrite(RIGHT_MOTOR2_WHITE,LOW);
 }
 
-if(buttons[rightArm_button] && buttons[left_button]){
+//rightArm motor2 down
+if(buttons[rightArm_button] && buttons[left_button] && !buttons[select_button] && !buttons[start_button]){
   analogWrite(RIGHT_MOTOR2_PWM,50);
 digitalWrite(RIGHT_MOTOR2_BLACK,LOW);
 digitalWrite(RIGHT_MOTOR2_WHITE,HIGH);
 }
 
-
-if(buttons[leftArm_button] && buttons[right_button]){
+//leftArm motor2 up
+if(buttons[leftArm_button] && buttons[right_button] && !buttons[select_button] && !buttons[start_button]){
   analogWrite(LEFT_MOTOR2_PWM,50);
 digitalWrite(LEFT_MOTOR2_BLACK,HIGH);
 digitalWrite(LEFT_MOTOR2_WHITE,LOW);
 }
 
-if(buttons[leftArm_button] && buttons[left_button]){
+//leftArm motor2 down
+if(buttons[leftArm_button] && buttons[left_button] && !buttons[select_button] && !buttons[start_button]){
   analogWrite(LEFT_MOTOR2_PWM,50);
 digitalWrite(LEFT_MOTOR2_BLACK,LOW);
 digitalWrite(LEFT_MOTOR2_WHITE,HIGH);
@@ -111,21 +126,47 @@ digitalWrite(LEFT_MOTOR2_WHITE,HIGH);
 
 
 
-
-if(!buttons[rightArm_button] && !buttons[select_button] && !buttons[start_button] && !buttons[leftArm_button] && buttons[headCW]){
+//head CW
+if(!buttons[rightArm_button] && !buttons[select_button] && !buttons[start_button] && !buttons[leftArm_button] && buttons[headCW] && !buttons[select_button] && !buttons[start_button]){
 headServo.write(headAngle);
 if (millis()-timeHead>50){headAngle++; timeHead=millis();}
 if(headAngle>150){headAngle=150;}
 }
 
-if(!buttons[rightArm_button] && !buttons[select_button] && !buttons[start_button] && !buttons[leftArm_button] && buttons[headCCW]){
+//head CW
+if(!buttons[rightArm_button] && !buttons[select_button] && !buttons[start_button] && !buttons[leftArm_button] && buttons[headCCW] && !buttons[select_button] && !buttons[start_button]){
 headServo.write(headAngle);
 if (millis()-timeHead>50){headAngle--; timeHead=millis();}
 if(headAngle<50){headAngle=50;}
 }
 
+//right servo down
+if(buttons[start_button] && buttons[bwd_button]){
+rightServo.write(rightAngle);
+if (millis()-timeRight>20){rightAngle--; timeRight=millis();}
+if(rightAngle<RIGHT_SERVO_MIN){rightAngle=RIGHT_SERVO_MIN;}
+}
+
+//right servo up
+if(buttons[start_button] && buttons[fwd_button]){
+rightServo.write(rightAngle);
+if (millis()-timeRight>20){rightAngle++; timeRight=millis();}
+if(rightAngle>RIGHT_SERVO_MAX){rightAngle=RIGHT_SERVO_MAX;}
+}
 
 
+//left servo down
+if(buttons[start_button] && buttons[headCCW]){
+leftServo.write(leftAngle);
+if (millis()-timeLeft>20){leftAngle--; timeLeft=millis();}
+if(leftAngle<LEFT_SERVO_MIN){leftAngle=LEFT_SERVO_MIN;}
+}
 
+//left servo up
+if(buttons[start_button] && buttons[headCW]){
+leftServo.write(leftAngle);
+if (millis()-timeLeft>20){leftAngle++; timeLeft=millis();}
+if(leftAngle>LEFT_SERVO_MAX){leftAngle=LEFT_SERVO_MAX;}
+}
 
 }

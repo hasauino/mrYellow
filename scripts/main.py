@@ -86,6 +86,11 @@ def arduino_bluetooth(q):
                     print ser.in_waiting                  
                     
 
+            if ('5' in buttons) and ('4' in buttons):
+                    call(['aplay','/home/pi/mrYellow/soundFiles/learning_computer_x.wav'])
+                    ser.read(ser.in_waiting)
+                    buttons=['0']
+                    print ser.in_waiting  
 
 
 
