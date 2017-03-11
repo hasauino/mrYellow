@@ -21,9 +21,20 @@ A repository containing everything related to mrYellow robot.
 ```
 1234
 ```
-##Updating the files
+###Updating the files
 All the files are located in "~/mrYellow" directory ("~" is the home folder), it is a "git" repository, you can use "git" commands to update the files remotely. 
 
+
+###SSH details
+You can access the robot using SSH, using the following command:
+```
+ssh pi@xxx.xxx.xxx.xxx
+```
+where xxx.xxx.xxx.xxx is the ip address of the robot. You can know robot's IP address from the router settings page. Or from the robot, type the follwoing command in the terminal:
+```
+ifconfig
+```
+under the wlan0 section, you can find the IP address
 
 ##Software
 
