@@ -9,7 +9,7 @@ mrYellow consists of a raspberry pi 3, and an Arduino Mega. The raspberry pi is 
 The "main.py" script, receives bluetooth commands and passes them to the arduino as a serial message.
 The arduino, recieves this message, and controlles the hardware accordingly.
 
-
+On Arduino, the "mrYellow.h" header file contains constants defentions and functions that control everything in the robot.
 
 
 
