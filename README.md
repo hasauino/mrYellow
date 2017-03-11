@@ -115,3 +115,10 @@ A diagram for the robot is shown below:
 Android app used:  https://play.google.com/store/apps/details?id=com.heightdev.arduinobtjoysticklite&hl=en
 Inside the app, go to settings, and set the delay to a value higher than 100 ms
 
+
+###Auto start python script at boot
+The last line in the "crontab" has the commnad to start the python script at boot, Type the following in the terminal:
+```
+sudo crontab -e
+```
+Comment/uncomment to disable/enable running the python script at boot
