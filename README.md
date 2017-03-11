@@ -14,9 +14,10 @@ The arduino, recieves this message, and controlles the hardware accordingly.
 
 
 ###Android App
-![Alt text](/documentation/figures/buttons.png?raw=true "app for controlling mrYellow")
+
 Android app used:  https://play.google.com/store/apps/details?id=com.heightdev.arduinobtjoysticklite&hl=en
-Inside the app, go to settings, and set the delay to a value higher than 100 ms
+![Alt text](/documentation/figures/buttons.png?raw=true "app for controlling mrYellow")
+Very important: **Inside the app, go to settings, and set the delay to a value higher than 100 ms**
 
 
 ###Auto start python script at boot
