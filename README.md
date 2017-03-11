@@ -2,18 +2,6 @@
 
 A repository containing everything related to mrYellow robot.
 
-
-1. j 1
-fdhdfh
-
-1. h 2
-advsav
-
-1. Itjem 3
-asas
-   1. Item 3a
-   1. Item 3b
-   
 ##General Instructions
 ![Alt text](/documentation/figures/back.png?raw=true "mrYellow back")
 
@@ -101,7 +89,7 @@ A diagram for the robot is shown below:
 
 ### Arduino Connections
 
-1. Right arm motor 1
+* Right arm motor 1
 
 | wire          | functionality | pin # |
 | ------------- |---------------| ------|
@@ -115,7 +103,7 @@ A diagram for the robot is shown below:
 | BIN2 (1st motor driver TB6612FNG)              |  motor white wire input   |  34  (Arduino) |
 | PWMB (1st motor driver TB6612FNG)              |  motor PWM   |  12  (Arduino) |
 
-1. Right arm motor 2
+* Right arm motor 2
 
 | wire          | functionality | pin # |
 | ------------- |---------------| ------|
@@ -129,7 +117,7 @@ A diagram for the robot is shown below:
 | AIN2 (1st motor driver TB6612FNG)              |  motor white wire input   |  28  (Arduino) |
 | PWMA (1st motor driver TB6612FNG)              |  motor PWM   |  13  (Arduino) |
 
-1. Left arm motor 1
+* Left arm motor 1
 
 | wire          | functionality | pin # |
 | ------------- |---------------| ------|
@@ -143,7 +131,7 @@ A diagram for the robot is shown below:
 | BIN2 (2nd motor driver TB6612FNG)              |  motor white wire input   |  40  (Arduino) |
 | PWMB (2nd motor driver TB6612FNG)              |  motor PWM   |  11  (Arduino) |
 
-1. Left arm motor 2
+* Left arm motor 2
 
 | wire          | functionality | pin # |
 | ------------- |---------------| ------|
@@ -157,7 +145,7 @@ A diagram for the robot is shown below:
 | AIN2 (2nd motor driver TB6612FNG)              |  motor white wire input   |  46  (Arduino) |
 | PWMA (2nd motor driver TB6612FNG)              |  motor PWM   |  10  (Arduino) |
 
-1. Head Servo
+* Head Servo
 
 | wire          | functionality | pin # |
 | ------------- |---------------| ------|
@@ -167,7 +155,7 @@ A diagram for the robot is shown below:
 
 
 
-1. Face Servo
+* Face Servo
 
 | wire          | functionality | pin # |
 | ------------- |---------------| ------|
@@ -175,7 +163,7 @@ A diagram for the robot is shown below:
 | Red         |  5V      |  5V (tetrix servo controller (i.e. servo takes power from tetrix servo controller)  |
 | Orane           |  servo signal  |  33 (Arduino) |
 
-1. Right Servo
+* Right Servo
 
 | wire          | functionality | pin # |
 | ------------- |---------------| ------|
@@ -184,7 +172,7 @@ A diagram for the robot is shown below:
 | Orane           |  servo signal  |  35 (Arduino) |
 
 
-1. Left Servo
+* Left Servo
 
 | wire          | functionality | pin # |
 | ------------- |---------------| ------|
