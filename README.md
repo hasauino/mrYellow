@@ -120,7 +120,7 @@ Inside the app, go to settings, and set the delay to a value higher than 100 ms
 The last line in the "crontab" has the commnad to start the python script at boot.
 for more information on crontab, check the following link:  [More details about crontab](http://www.computerhope.com/unix/ucrontab.htm)
 
-To change the crontab, type the following in the terminal:
+To change the crontab, type the following in the terminal (you can open a terminal by CTRL+ALT+t):
 ```
 sudo crontab -e
 ```
