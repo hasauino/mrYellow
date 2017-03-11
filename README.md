@@ -21,11 +21,11 @@ A repository containing everything related to mrYellow robot.
 ```
 1234
 ```
-###Updating the files
+####Updating the files
 All the files are located in "~/mrYellow" directory ("~" is the home folder), it is a "git" repository, you can use "git" commands to update the files remotely. 
 
 
-###SSH details
+####SSH details
 You can access the robot using SSH, using the following command:
 ```
 ssh pi@xxx.xxx.xxx.xxx
