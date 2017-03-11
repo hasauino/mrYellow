@@ -36,12 +36,11 @@ Very important: **Inside the app, go to settings, and set the delay to a value h
 |     leftArm_button + headCCW     |    move leftArm motor 1 (shoulder joint) down    |
 |     rightArm_button + headCW     |    move rightArm motor 1 (shoulder joint) up    |
 |     rightArm_button + headCCW     |    move rightArm motor 1 (shoulder joint) down    |
-| ------------- |---------------|
-|     leftArm_button + headCW     |    move leftArm motor 1 (shoulder joint) up     |
-|     leftArm_button + headCCW     |    move leftArm motor 1 (shoulder joint) down    |
-|     rightArm_button + headCW     |    move rightArm motor 1 (shoulder joint) up    |
-|     rightArm_button + headCCW     |    move rightArm motor 1 (shoulder joint) down    |
-| ------------- |---------------|
+|     leftArm_button + left_button     |    move leftArm motor 2 (elbow joint) up     |
+|     leftArm_button + right_button     |    move leftArm motor 2 (elbow joint) down    |
+|     rightArm_button + left_button     |    move rightArm motor 2 (elbow joint) up    |
+|     rightArm_button + right_button     |    move rightArm motor 2 (elbow joint) down    |
+
 
 
 
