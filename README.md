@@ -126,7 +126,7 @@ sudo crontab -e
 ```
 Scroll down to the last line, you should see the following line:
 ```
-
+@reboot /home/pi/.virtualenvs/cv/bin/python /home/pi/mrYellow/scripts/main.py > /home/pi/logs.log 2>&1
 ```
-Comment/uncomment the last line to disable/enable running the python script at boot. For example, if the last line is not commented, as follows:
+Comment/uncomment (by adding '#')the last line to disable/enable running the python script at boot.
 
