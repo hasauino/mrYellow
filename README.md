@@ -5,7 +5,7 @@ A repository containing everything related to mrYellow robot.
 ##General Instructions
 ![Alt text](/documentation/figures/back.png?raw=true "mrYellow back")
 
-1- Do NOT charge while the Raspberri pi (RPi) switch or the motors/speaker switch is ON. Before charging, shutdown down the RPi and switch it OFF, also switch OFF the motors/speaker power. After that you can plug the power cable into one of the charging slots. You should see a red light near the right arm shoulder.
+1- Do NOT charge while the Raspberry pi (RPi) switch or the motors/speaker switch is ON. Before charging, shutdown down the RPi and switch it OFF, also switch OFF the motors/speaker power. After that you can plug the power cable into one of the charging slots. You should see a red light near the right arm shoulder.
 
 2- Charging requires at least 7 hours.
 
