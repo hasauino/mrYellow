@@ -22,7 +22,7 @@ A repository containing everything related to mrYellow robot.
 1234
 ```
 ##Updating the files
-
+All the files are located in "~/mrYellow" directory ("~" is the home folder), it is a "git" repository, you can use "git" commands to update the files remotely. 
 
 
 ##Software
