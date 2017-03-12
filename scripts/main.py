@@ -27,7 +27,7 @@ def face_detection(q):
             q.put(num_faces)
             if num_faces>0:
                     t0=time()
-                    call(['aplay','/home/pi/mrYellow/soundFiles/hi.wav'])
+                    call(['aplay','/home/pi/mrYellow/soundFiles/4.wav'])
                     while ((time()-t0)<10):
                             detectFaces(cap,cv2,face_cascade)
 
@@ -68,38 +68,58 @@ def arduino_bluetooth(q):
                     ser_arduino.write(b)
 
             if ('5' in buttons) and ('1' in buttons):
-                    call(['aplay','/home/pi/mrYellow/soundFiles/ar_marhaban.wav'])
+                    call(['aplay','/home/pi/mrYellow/soundFiles/1.wav'])
                     ser.read(ser.in_waiting)
                     buttons=['0']
                     print ser.in_waiting
 
             if ('5' in buttons) and ('2' in buttons):
-                    call(['aplay','/home/pi/mrYellow/soundFiles/destroy.wav'])
+                    call(['aplay','/home/pi/mrYellow/soundFiles/2.wav'])
                     ser.read(ser.in_waiting)
                     buttons=['0']
                     print ser.in_waiting
                     
             if ('5' in buttons) and ('3' in buttons):
-                    call(['aplay','/home/pi/mrYellow/soundFiles/hi.wav'])
+                    call(['aplay','/home/pi/mrYellow/soundFiles/3.wav'])
                     ser.read(ser.in_waiting)
                     buttons=['0']
                     print ser.in_waiting                  
                     
 
             if ('5' in buttons) and ('4' in buttons):
-                    call(['aplay','/home/pi/mrYellow/soundFiles/learning_computer_x.wav'])
+                    call(['aplay','/home/pi/mrYellow/soundFiles/4.wav'])
                     ser.read(ser.in_waiting)
                     buttons=['0']
                     print ser.in_waiting  
 
 
 
+            if ('5' in buttons) and ('7' in buttons):
+                    call(['aplay','/home/pi/mrYellow/soundFiles/5.wav'])
+                    ser.read(ser.in_waiting)
+                    buttons=['0']
+                    print ser.in_waiting 
         
 
 
+            if ('5' in buttons) and ('8' in buttons):
+                    call(['aplay','/home/pi/mrYellow/soundFiles/6.wav'])
+                    ser.read(ser.in_waiting)
+                    buttons=['0']
+                    print ser.in_waiting 
 
 
+            if ('5' in buttons) and ('9' in buttons):
+                    call(['aplay','/home/pi/mrYellow/soundFiles/7.wav'])
+                    ser.read(ser.in_waiting)
+                    buttons=['0']
+                    print ser.in_waiting
 
+            if ('5' in buttons) and ('A' in buttons):
+                    call(['aplay','/home/pi/mrYellow/soundFiles/8.wav'])
+                    ser.read(ser.in_waiting)
+                    buttons=['0']
+                    print ser.in_waiting 
 
 
 
