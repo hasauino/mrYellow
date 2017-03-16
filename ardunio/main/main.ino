@@ -201,6 +201,6 @@ faceServo.write(110);}
 
 
 if ((millis()-t_buttons)>1000){
-  for (int i=0;i<9;i++) {buttons[i]=0;}
+  for (int i=0;i<11;i++) {buttons[i]=0;}
   }
 }
