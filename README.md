@@ -2,7 +2,7 @@
 
 A repository containing everything related to mrYellow robot.
 
-##General Instructions
+## General Instructions
 ![Alt text](/documentation/figures/back.png?raw=true "mrYellow back")
 
 * Do NOT charge while the Raspberry pi (RPi) switch or the motors/speaker switch are ON. Before charging, shutdown down the RPi and switch it OFF, also switch OFF the motors/speaker power. After that you can plug the power cable into one of the charging slots. You should see a red light near the right arm shoulder.
@@ -25,11 +25,11 @@ sudo pkill python
 ```
 1234
 ```
-####Updating the files
+#### Updating the files
 All the files are located in "~/mrYellow" directory ("~" is the home folder), it is a "git" repository, you can use "git" commands to update the files remotely. 
 
 
-####SSH details
+#### SSH details
 You can access the robot using SSH, using the following command:
 ```
 ssh pi@xxx.xxx.xxx.xxx
@@ -40,9 +40,9 @@ ifconfig
 ```
 under the wlan0 section, you can find the IP address
 
-##Software
+## Software
 
-###Overview
+### Overview
 mrYellow consists of a raspberry pi 3, and an Arduino Mega. The raspberry pi is responsible for running the face detection, and receiving bluetooth commands on its UART port. The two processes are running in parallel as a python script named "main.py".
 
 The "main.py" script, receives bluetooth commands and passes them to the arduino as a serial message.
@@ -52,7 +52,7 @@ On Arduino, the "mrYellow.h" header file contains constants defentions and funct
 
 
 
-###Android App
+### Android App
 
 Android app used:  https://play.google.com/store/apps/details?id=com.heightdev.arduinobtjoysticklite&hl=en
 
@@ -90,7 +90,7 @@ Very important: **Inside the app, go to settings, and set the delay to a value h
 
 
 
-###Auto start python script at boot
+### Auto start python script at boot
 The last line in the "crontab" has the commnad to start the python script at boot.
 for more information on crontab, check the following link:  [More details about crontab](http://www.computerhope.com/unix/ucrontab.htm)
 
